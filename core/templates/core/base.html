@@ -16,7 +16,7 @@
         <a href="/" class="text-white text-2xl">Teal CRM</a>
         <div>
             <a href="{% url 'dashboard' %}" class="text-white rounded-xl py-4 px-6 hover:bg-teal-600 hover:text-2xl">Dashboard</a>
-            <a href="{% url 'add_lead' %}" class="text-white rounded-xl py-4 px-6 hover:bg-teal-600 hover:text-2xl">Leads</a>
+            <a href="{% url 'leads_list' %}" class="text-white rounded-xl py-4 px-6 hover:bg-teal-600 hover:text-2xl">Leads</a>
             <a href="{% url 'about' %}" class="text-white rounded-xl py-4 px-6 hover:bg-teal-700 hover:text-2xl">About</a>
             {% if request.user.is_authenticated %}
                 <a href="{% url 'logout' %}" class="text-white rounded-xl py-4 px-6 hover:bg-red-600 hover:text-2xl">Logout</a>
