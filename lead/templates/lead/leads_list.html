@@ -7,5 +7,24 @@
             Leads management
         </h1>
         <a href="{% url 'add_lead' %}" class=" inline-block text-white rounded-xl py-4 px-6 bg-teal-600 hover:text-xl">Add Leads</a>
+        <a href="{% url 'add_lead' %}" class=" inline-block text-white rounded-xl py-4 px-6 bg-teal-600 hover:text-xl">Load Leads</a>
+        <div class="flex justify-between bg-gray-400 rounded-xl mt-4">
+            <p class="py-4 px-2   w-full">Name</p>
+            <p class="py-4 px-2   w-full">Priority</p>
+            <p class="py-4 px-2   w-full">Status</p>
+            <!-- <p class="py-4 px-2  font-thin w-full">Tel</p>
+            <p class="py-4 px-2  font-thin w-full">Source</p>
+            <p class="py-4 px-2  font-thin w-full">Contact History</p> -->
+        </div>
+        {% for lead in leads %}
+        <div class="flex justify-between">
+            <p class="py-4 px-2   w-full {% cycle 'bg-gray-200' '' %}">
+                <a href="{% url 'leads_details' lead.id %}">{{ lead.name }}</a>
+            </p>
+            <p class="py-4 px-2   w-full">{{ lead.priority }}</p>
+            <p class="py-4 px-2   w-full">{{ lead.status }}</p>
+        </div>
+
+        {% endfor %}
     </div>
 {% endblock %}
